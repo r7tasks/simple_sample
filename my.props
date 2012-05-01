@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <TopDir>$(SolutionDir)..</TopDir>
+    <CustomTopDir>$(SolutionDir)..</CustomTopDir>
+    <CustomInclude>$(CustomTopDir)\include</CustomInclude>
+    <CustomOutDir>$(CustomTopDir)\out_$(Platform)\$(Configuration)\</CustomOutDir>
+    <CustomIntermediateDir>$(CustomTopDir)\temp_$(Platform)\$(Configuration)\$(ProjectName)\</CustomIntermediateDir>
+    <CustomExternalDir>$(CustomTopDir)\external</CustomExternalDir>
+    <CustomBoostDir>$(CustomExternalDir)\boost</CustomBoostDir>
+    <LocalDebuggerWorkingDirectory>$(CustomOutDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ExcludePath />
+    <OutDir>$(CustomOutDir)</OutDir>
+    <IntDir>$(CustomIntermediateDir)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CustomInclude);$(CustomBoostDir);$(CustomExternalDir);$(ProjectDir);$(IncludePath)</AdditionalIncludeDirectories>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="CustomTopDir">
+      <Value>$(CustomTopDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomInclude">
+      <Value>$(CustomInclude)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomOutDir">
+      <Value>$(CustomOutDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomIntermediateDir">
+      <Value>$(CustomIntermediateDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomPlatformSdkBinDir">
+      <Value>$(CustomPlatformSdkBinDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomPlatformSdkIncludeDir">
+      <Value>$(CustomPlatformSdkIncludeDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomExternalDir">
+      <Value>$(CustomExternalDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomBoostDir">
+      <Value>$(CustomBoostDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CustomTestDir">
+      <Value>$(CustomTestDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CommonFilesInclude">
+      <Value>$(CommonFilesInclude)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LocalDebuggerWorkingDirectory">
+      <Value>$(LocalDebuggerWorkingDirectory)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
