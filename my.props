@@ -3,10 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <TopDir>$(SolutionDir)..</TopDir>
-    <CustomTopDir>$(SolutionDir)..</CustomTopDir>
-    <CustomInclude>$(CustomTopDir)\include</CustomInclude>
-    <CustomOutDir>$(CustomTopDir)\out_$(Platform)\$(Configuration)\</CustomOutDir>
-    <CustomIntermediateDir>$(CustomTopDir)\temp_$(Platform)\$(Configuration)\$(ProjectName)\</CustomIntermediateDir>
+    <CustomOutDir>$(SolutionDir)\_out_$(Platform)\$(Configuration)\</CustomOutDir>
+    <CustomIntermediateDir>$(SolutionDir)\_temp_$(Platform)\$(Configuration)\$(ProjectName)\</CustomIntermediateDir>
     <CustomExternalDir>$(CustomTopDir)\external</CustomExternalDir>
     <CustomBoostDir>$(CustomExternalDir)\boost</CustomBoostDir>
     <LocalDebuggerWorkingDirectory>$(CustomOutDir)</LocalDebuggerWorkingDirectory>
@@ -27,12 +25,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <BuildMacro Include="CustomTopDir">
-      <Value>$(CustomTopDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="CustomInclude">
-      <Value>$(CustomInclude)</Value>
-    </BuildMacro>
     <BuildMacro Include="CustomOutDir">
       <Value>$(CustomOutDir)</Value>
     </BuildMacro>
