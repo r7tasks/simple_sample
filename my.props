@@ -2,10 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <CustomOutDir>$(SolutionDir)\_out_$(Platform)\$(Configuration)\</CustomOutDir>
-    <CustomIntermediateDir>$(SolutionDir)\_temp_$(Platform)\$(Configuration)\$(ProjectName)\</CustomIntermediateDir>
+    <CustomOutDir>$(SolutionDir)_out_$(Platform)\$(Configuration)\</CustomOutDir>
+    <CustomIntermediateDir>$(SolutionDir)_temp_$(Platform)\$(Configuration)\$(ProjectName)\</CustomIntermediateDir>
     <LocalDebuggerWorkingDirectory>$(CustomOutDir)</LocalDebuggerWorkingDirectory>
-    <GTestDir>$(SolutionDir)\gtest</GTestDir>
+    <GTestDir>$(SolutionDir)gtest</GTestDir>
   </PropertyGroup>
   <PropertyGroup>
     <ExcludePath />
