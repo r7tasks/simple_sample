@@ -2,12 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <TopDir>$(SolutionDir)..</TopDir>
     <CustomOutDir>$(SolutionDir)\_out_$(Platform)\$(Configuration)\</CustomOutDir>
     <CustomIntermediateDir>$(SolutionDir)\_temp_$(Platform)\$(Configuration)\$(ProjectName)\</CustomIntermediateDir>
-    <CustomExternalDir>$(CustomTopDir)\external</CustomExternalDir>
-    <CustomBoostDir>$(CustomExternalDir)\boost</CustomBoostDir>
     <LocalDebuggerWorkingDirectory>$(CustomOutDir)</LocalDebuggerWorkingDirectory>
+    <GTestDir>$(SolutionDir)\gtest</GTestDir>
   </PropertyGroup>
   <PropertyGroup>
     <ExcludePath />
@@ -16,7 +14,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(CustomInclude);$(CustomBoostDir);$(CustomExternalDir);$(ProjectDir);$(IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(GTestDir)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -31,23 +29,8 @@
     <BuildMacro Include="CustomIntermediateDir">
       <Value>$(CustomIntermediateDir)</Value>
     </BuildMacro>
-    <BuildMacro Include="CustomPlatformSdkBinDir">
-      <Value>$(CustomPlatformSdkBinDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="CustomPlatformSdkIncludeDir">
-      <Value>$(CustomPlatformSdkIncludeDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="CustomExternalDir">
-      <Value>$(CustomExternalDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="CustomBoostDir">
-      <Value>$(CustomBoostDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="CustomTestDir">
-      <Value>$(CustomTestDir)</Value>
-    </BuildMacro>
-    <BuildMacro Include="CommonFilesInclude">
-      <Value>$(CommonFilesInclude)</Value>
+    <BuildMacro Include="GTestDir">
+      <Value>$(GTestDir)</Value>
     </BuildMacro>
     <BuildMacro Include="LocalDebuggerWorkingDirectory">
       <Value>$(LocalDebuggerWorkingDirectory)</Value>
